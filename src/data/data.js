@@ -57,7 +57,7 @@ export const data=[
     {
         id:8,
         name: "Text-Emoji Converter",
-        description: "A user-friendly web app for encrypting and decrypting text messages using emojis.",
+        description: "A user-friendly web app for encrypting and decrypting text messages using emojis. You can use it like me to send secret messages to your friends or decode messages you receive. The app is designed to be simple and easy to use, with a clean and intuitive interface.",
         github: "https://github.com/UjjvalRajput/Text-And-Emoji",
         techStack: "HTML, CSS, JavaScript",
         show: "https://ujjvalrajput.github.io/Text-And-Emoji/",
