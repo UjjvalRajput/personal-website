@@ -9,7 +9,6 @@ import {
 import { GrDocumentPdf } from "react-icons/gr";
 import { FaMedium } from "react-icons/fa6";
 import { HiOutlineMail } from 'react-icons/hi';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
