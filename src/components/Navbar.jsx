@@ -89,7 +89,7 @@ const Navbar = () => {
       {/* Mobile social icons */}
       {['/', '/about', '/projects'].includes(location.pathname) && (
         <div className='flex flex-col items-center mt-6 space-y-4'>
-          <a href='https://www.linkedin.com/in/ujjval-dr/' target='_blank' rel='noopener noreferrer' className='transition duration-300 transform hover:opacity-75'>
+          <a href='https://www.linkedin.com/in/UjjvalRajput' target='_blank' rel='noopener noreferrer' className='transition duration-300 transform hover:opacity-75'>
             <FaLinkedin size={40} />
           </a>
           <a href='https://github.com/UjjvalRajput' target='_blank' rel='noopener noreferrer' className='transition duration-300 transform hover:opacity-75'>
@@ -101,7 +101,7 @@ const Navbar = () => {
           <a href='mailto:ujjval.rajput@mail.utoronto.ca' className='transition duration-300 transform hover:opacity-75'>
             <HiOutlineMail size={40} />
           </a>
-          <a href={`${process.env.PUBLIC_URL}/UjjvalRajputResume.pdf`} target='_blank' rel='noopener noreferrer' className='transition duration-300 transform hover:opacity-75'>
+          <a href={`${process.env.PUBLIC_URL}/Ujjval-Rajput-Resume.pdf`} target='_blank' rel='noopener noreferrer' className='transition duration-300 transform hover:opacity-75'>
             <GrDocumentPdf size={40} />
           </a>
         </div>
@@ -114,7 +114,7 @@ const Navbar = () => {
             <li className='flex items-center justify-center w-20 h-20 bg-transparent rounded-md transition duration-300 transform hover:opacity-75'>
               <a
                 className='flex justify-center items-center w-full h-full text-gray-300'
-                href='https://www.linkedin.com/in/ujjval-dr/'
+                href='https://www.linkedin.com/in/UjjvalRajput'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -152,7 +152,7 @@ const Navbar = () => {
             <li className='flex items-center justify-center w-20 h-20 bg-transparent rounded-md transition duration-300 transform hover:opacity-75'>
               <a
                 className='flex justify-center items-center w-full h-full text-gray-300'
-                href={`${process.env.PUBLIC_URL}/UjjvalRajputResume.pdf`}
+                href={`${process.env.PUBLIC_URL}/Ujjval-Rajput-Resume.pdf`}
                 target='_blank'
                 rel='noopener noreferrer'
               >
