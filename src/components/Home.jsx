@@ -11,9 +11,6 @@ const Home = () => {
         <h2 className='pt-12 text-3xl sm:text-3xl md:text-3xl font-medium text-[#ff8383]'>
           I'm a student studying Computer Science at the University of Toronto.
         </h2>
-        <p className='text-[#d4d4d4] text-base sm:text-xl md:text-xl py-5 max-w-[800px] font-light'>
-          They say "<span className='font-semibold italic font-Handwritten'>home is where the heart is</span>," and for me, this site is where my professional journey finds its place.
-        </p>
       </div>
     </div>
   );
