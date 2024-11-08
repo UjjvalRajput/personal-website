@@ -9,7 +9,7 @@ const Home = () => {
           Ujjval Rajput
         </h1>
         <h2 className='pt-12 text-3xl sm:text-3xl md:text-3xl font-medium text-[#ff8383]'>
-          Computer Science student at the University of Toronto.
+          Student exploring Computer Science at the University of Toronto.
         </h2>
       </div>
     </div>
