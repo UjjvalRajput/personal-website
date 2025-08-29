@@ -189,8 +189,7 @@ const About = () => {
                 .
               </>,
               <>
-                I am exploring full-time new grad opportunities and would love
-                to{" "}
+                I am exploring new grad opportunities and would love to{" "}
                 <a href="/" className="text-[#ff8383] hover:underline">
                   connect
                 </a>
