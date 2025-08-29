@@ -5,7 +5,7 @@ const experiences = [
   {
     company: "Arcadis",
     location: "Toronto, ON",
-    role: "Technical Product Analyst Co-op",
+    role: "Software Analyst Co-op",
     date: "September 2025 - August 2026",
     bullets: ["Joining the CurbIQ Team"],
   },
@@ -79,6 +79,20 @@ const experiences = [
   },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 12 },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+};
+
 const cardVariants = {
   hover: {
     scale: 1.05,
@@ -87,29 +101,43 @@ const cardVariants = {
     boxShadow: "0px 8px 25px rgba(255, 131, 131, 0.3)",
     transition: { type: "spring", stiffness: 200, damping: 10 },
   },
-  tap: {
-    scale: 0.97,
-  },
+  tap: { scale: 0.97 },
 };
 
 const Experience = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div className="w-full min-h-screen bg-[#0a192f] text-white pt-28">
+    <motion.div
+      className="w-full min-h-screen bg-[#0a192f] text-white pt-28"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <div className="max-w-[1200px] mx-auto p-8 flex flex-col xl:flex-row gap-10 h-full">
-        {/* Left side: Company list */}
-        <div className="xl:w-1/3 flex flex-col space-y-5">
-          <h1 className="text-5xl font-bold font-Serif text-center xl:text-left">
+        {/* Left Section */}
+        <motion.div
+          className="xl:w-1/3 flex flex-col space-y-5"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.h1
+            className="text-5xl font-bold font-Serif text-center xl:text-left"
+            variants={fadeInUp}
+          >
             Experience
-          </h1>
+          </motion.h1>
+
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               onClick={() => setSelectedIndex(index)}
-              variants={cardVariants}
-              whileHover="hover"
-              whileTap="tap"
+              variants={fadeInUp}
+              whileHover={cardVariants.hover}
+              whileTap={cardVariants.tap}
               className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-150 ${
                 selectedIndex === index
                   ? "bg-[#ff8383]/20 shadow-lg shadow-[#ff8383]/30"
@@ -122,10 +150,10 @@ const Experience = () => {
               <p className="text-xs text-gray-400">{exp.date}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Right side: Selected experience details */}
-        <div className="xl:w-2/3">
+        {/* Right Section */}
+        <motion.div className="xl:w-2/3">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedIndex}
@@ -191,9 +219,9 @@ const Experience = () => {
               </motion.ul>
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
