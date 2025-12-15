@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const experiences = [
   {
     company: "Arcadis",
     location: "Toronto, ON",
-    role: "Software Analyst Co-op",
+    role: "CurbIQ Product Analyst/Software Developer Co-op",
     date: "September 2025 - August 2026",
     bullets: ["Joining the CurbIQ Team"],
   },

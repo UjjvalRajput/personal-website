@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -65,7 +64,7 @@ const About = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 12 },
+      transition: { type: "spring", stiffness: 220, damping: 16 },
     },
   };
 
@@ -81,7 +80,7 @@ const About = () => {
   const staggerContainer = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.05, delayChildren: 0.02 },
     },
   };
 
@@ -135,73 +134,93 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             {[
-              <>
-                My focus is on user and business-centric development with a
-                growing interest in cloud technologies. I have worked as a
-                software engineering fellow at{" "}
-                <a
-                  href="https://www.concur.live/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#ff8383] hover:underline"
-                >
-                  startups
-                </a>
-                ,{" "}
-                <a
-                  href="https://www.lumentum.com/en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#ff8383] hover:underline"
-                >
-                  large companies
-                </a>
-                , and{" "}
-                <a
-                  href="https://sop.utoronto.ca/group/heart-and-stroke-foundation-hsf-st-george-chapter/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#ff8383] hover:underline"
-                >
-                  university-led programs
-                </a>
-                .
-              </>,
-              <>
-                I am also committed to helping others through both{" "}
-                <a
-                  href="/Ujjval-AIU-SA-Quote.png"
-                  className="text-[#ff8383] hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  mentorship
-                </a>{" "}
-                and{" "}
-                <a
-                  href="https://www.utm.utoronto.ca/rgasc/undergraduate-students/facilitated-study-groups-fsgs"
-                  className="text-[#ff8383] hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  volunteerism
-                </a>
-                .
-              </>,
-              <>
-                I am exploring new grad opportunities and would love to{" "}
-                <a href="/" className="text-[#ff8383] hover:underline">
-                  connect
-                </a>
-                !
-              </>,
-              <>
-                Outside of my professional life, I enjoy painting and Twenty20
-                cricket.
-              </>,
-            ].map((para, idx) => (
-              <motion.p key={idx} variants={fadeInUp}>
-                {para}
+              {
+                id: "about-para-1",
+                content: (
+                  <>
+                    My focus is on user and business-centric development with a
+                    growing interest in cloud technologies. I have worked as a
+                    software engineering fellow at{" "}
+                    <a
+                      href="https://www.concur.live/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#ff8383] hover:underline"
+                    >
+                      startups
+                    </a>
+                    ,{" "}
+                    <a
+                      href="https://www.lumentum.com/en"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#ff8383] hover:underline"
+                    >
+                      large companies
+                    </a>
+                    , and{" "}
+                    <a
+                      href="https://sop.utoronto.ca/group/heart-and-stroke-foundation-hsf-st-george-chapter/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#ff8383] hover:underline"
+                    >
+                      university-led programs
+                    </a>
+                    .
+                  </>
+                ),
+              },
+              {
+                id: "about-para-2",
+                content: (
+                  <>
+                    I am also committed to helping others through both{" "}
+                    <a
+                      href="/Ujjval-AIU-SA-Quote.png"
+                      className="text-[#ff8383] hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      mentorship
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://www.utm.utoronto.ca/rgasc/undergraduate-students/facilitated-study-groups-fsgs"
+                      className="text-[#ff8383] hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      volunteerism
+                    </a>
+                    .
+                  </>
+                ),
+              },
+              {
+                id: "about-para-3",
+                content: (
+                  <>
+                    I am exploring new grad opportunities and would love to{" "}
+                    <a href="/" className="text-[#ff8383] hover:underline">
+                      connect
+                    </a>
+                    !
+                  </>
+                ),
+              },
+              {
+                id: "about-para-4",
+                content: (
+                  <>
+                    Outside of my professional life, I enjoy painting and
+                    Twenty20 cricket.
+                  </>
+                ),
+              },
+            ].map((para) => (
+              <motion.p key={para.id} variants={fadeInUp}>
+                {para.content}
               </motion.p>
             ))}
           </motion.div>

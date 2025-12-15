@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { data } from "../data/data.js";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -28,7 +28,6 @@ const cardVariants = {
 };
 
 const Projects = () => {
-  const [selectedIndex, setSelectedIndex] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -53,7 +52,6 @@ const Projects = () => {
           {data.map((project, index) => (
             <motion.div
               key={index}
-              onClick={() => setSelectedIndex(index)}
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
               variants={fadeInUp}
@@ -122,58 +120,6 @@ const Projects = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Selected project details */}
-        <AnimatePresence mode="wait">
-          {selectedIndex !== null && (
-            <motion.div
-              key={selectedIndex}
-              initial={{ opacity: 0, y: 20, scale: 0.98 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: { type: "spring", stiffness: 150, damping: 15 },
-              }}
-              exit={{ opacity: 0, y: -20, scale: 0.98 }}
-              className="bg-[#112240] p-6 rounded-lg shadow-lg mt-8"
-            >
-              <p className="text-2xl font-bold text-[#ff8383] mb-2">
-                {data[selectedIndex].name}
-              </p>
-              <p className="text-lg text-gray-400 mb-2">
-                {data[selectedIndex].description}
-              </p>
-              <p className="text-sm text-gray-400 mb-4">
-                Tech Stack: {data[selectedIndex].techStack}
-              </p>
-              <div className="flex space-x-4">
-                {data[selectedIndex].show && (
-                  <a
-                    href={data[selectedIndex].show}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="rounded-lg px-4 py-2 bg-[#ff8383] text-white font-bold hover:bg-[#f45c5c] transition duration-300">
-                      Demo
-                    </button>
-                  </a>
-                )}
-                {data[selectedIndex].github && (
-                  <a
-                    href={data[selectedIndex].github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="rounded-lg px-4 py-2 bg-[#ff8383] text-white font-bold hover:bg-[#f45c5c] transition duration-300">
-                      GitHub
-                    </button>
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </motion.div>
   );
